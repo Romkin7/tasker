@@ -1,7 +1,28 @@
 const express = require('express');
 const Task = require('../models/task');
 const auth = require('../middleware/auth');
+const SortQuery = require('../utils/sortQuery');
+const Pagination = require('../utils/pagination');
 const router = new express.Router();
+
+router.get('/tasks', auth, async (req, res) => {
+    try {
+        const sortQuery = new SortQuery(req.query);
+        const tasksCount = await Task.countDocuments({ owner: req.user._id });
+        const pagination = new Pagination(req.query, tasksCount);
+        const tasks = await Task.find({ owner: req.user._id })
+            .sort(sortQuery)
+            .skip((pagination.currentPage - 1) * pagination.perPage)
+            .limit(pagination.perPage);
+        if (tasks) {
+            return res.status(200).json({ tasks, pagination });
+        } else {
+            return res.status(404).json({ message: 'Tasks not found!' });
+        }
+    } catch (error) {
+        return res.status(500).json({ message: error.message });
+    }
+});
 
 router.get('/tasks/:id', auth, async (req, res) => {
     const _id = req.params.id;
@@ -14,7 +35,7 @@ router.get('/tasks/:id', auth, async (req, res) => {
         }
 
         res.send(task);
-    } catch (e) {
+    } catch (error) {
         res.status(500).send();
     }
 });
