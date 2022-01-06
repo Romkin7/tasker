@@ -10,10 +10,10 @@
         "start:src": "nodemon src/index.js",
         "dev": "concurrently \"npm run start:frontend\" \"npm run start:src\"",
         "lint": "npm run prettier:test && npm run lint:src && npm lint:frontend",
-        "lint:frontend": "eslint frontend/**/*.js{x} --ext .js{x}",
+        "lint:frontend": "eslint frontend/**/*.js --ext .js",
         "lint:src": "eslint src/**/*.js --ext .js",
-        "prettier:test": "prettier --check \"**/**/*.js{x}\"",
-        "prettier:fix": "prettier --write \"**/**/*.js{x}\""
+        "prettier:test": "prettier --check \"**/**/*.js\"",
+        "prettier:fix": "prettier --write \"**/**/*.js\""
     },
     "author": "sandstro + liukas",
     "license": "ISC",

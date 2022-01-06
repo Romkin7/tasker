@@ -1,7 +1,7 @@
 import { ADD_USER } from '../actions/userActions';
 
 const DEFAULT_STATE = {
-    user: null
+    user: null,
 };
 
 const userReducer = (state = DEFAULT_STATE, action) => {
@@ -9,7 +9,7 @@ const userReducer = (state = DEFAULT_STATE, action) => {
         case ADD_USER:
             return {
                 ...state,
-               user: action.user.user,
+                user: action.user.user,
             };
         default:
             return state;
