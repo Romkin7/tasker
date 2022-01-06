@@ -20,7 +20,7 @@
     }
 }
 
-.main {
+main {
     position: relative;
     min-height: 100vh;
     .sidebarWrapper {
@@ -32,4 +32,11 @@
     h1, h2, h3, h4, h5 {
         text-transform: capitalize;
     }
+}
+
+footer {
+    min-height: 10vh;
+    text-align: center;
+    color: $white;
+    background-color: $black;
 }

@@ -7,7 +7,8 @@ const ProfilePage = () => {
     const { age, email, name, createdAt } = user;
     return (
         <section>
-            <h2>Name: {name}</h2>
+            <h2>Profile page</h2>
+            <h3>Name: {name}</h3>
             <p>Email: {email}</p>
             <p>Age: {age}</p>
             <p>CreatedAt: {new Date(createdAt).toDateString()}</p>
