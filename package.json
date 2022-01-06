@@ -7,6 +7,8 @@
         "test": "test",
         "start": "node src/index.js",
         "dev": "nodemon src/index.js",
+        "lint": "npm run prettier:test && npm run lint:src",
+        "lint:src": "eslint src/**/*.js --ext .js",
         "prettier:test": "prettier --check \"**/**/*.js\"",
         "prettier:fix": "prettier --write \"**/**/*.js\""
     },
@@ -24,6 +26,8 @@
         "validator": "12.1.0"
     },
     "devDependencies": {
+        "eslint": "8.6.0",
+        "eslint-plugin-prettier": "4.0.0",
         "husky": "7.0.4",
         "prettier": "2.5.1"
     },
@@ -36,8 +40,14 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "npm run prettier:test",
-            "pre-push": "npm run prettier:test"
+            "pre-commit": "npm run lint",
+            "pre-push": "npm run lint"
         }
+    },
+    "lint-staged": {
+        "*.{jsx,js,scss}": [
+            "prettier --write",
+            "git add"
+        ]
     }
 }

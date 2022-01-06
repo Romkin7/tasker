@@ -1,0 +1,16 @@
+{
+    "root": true,
+    "parser": "esprima",
+    "plugins": [
+        "prettier"
+    ],
+    "rules": {
+        "prettier/prettier": "error",
+        "no-explicit-any": {
+            "ignoreRestArgs": true
+        }
+    },
+    "ignorePatterns": [
+        "node_modules"
+    ]
+}
