@@ -5,10 +5,7 @@
         "prettier"
     ],
     "rules": {
-        "prettier/prettier": "error",
-        "no-explicit-any": {
-            "ignoreRestArgs": true
-        }
+        "prettier/prettier": "error"
     },
     "ignorePatterns": [
         "node_modules"
