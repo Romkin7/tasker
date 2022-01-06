@@ -7,7 +7,7 @@ const Header = () => {
         <header>
             <nav className="navbar">
                 <h1>Tasker app 2022</h1>
-                <Link to="/login">Login</Link>
+                <Link to="/">Login</Link>
             </nav>
         </header>
     );

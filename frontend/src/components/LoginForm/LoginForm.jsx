@@ -44,7 +44,7 @@ const LoginForm = () => {
                 password: event.target[1].value,
             }),
         );
-        navigate('/');
+        navigate('/profile');
     };
     const formFields = loginFormFields;
     return (

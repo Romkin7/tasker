@@ -12,8 +12,8 @@ function App() {
                 <Header />
                 <main>
                     <Routes>
-                        <Route exact path="/" element={<ProfilePage />} />
-                        <Route exact path="/login" element={<LoginPage />} />
+                        <Route exact path="/profile" element={<ProfilePage />} />
+                        <Route exact path="/" element={<LoginPage />} />
                     </Routes>
                 </main>
                 <Footer />
