@@ -1,6 +1,5 @@
 {
     "root": true,
-    "parser": "esprima",
     "plugins": [
         "prettier"
     ],
