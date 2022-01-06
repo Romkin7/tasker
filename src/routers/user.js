@@ -8,8 +8,9 @@ router.post('/users', async (req, res) => {
 
     try {
         await user.save();
+        const newUser = await User.findById(user._id).select('-password');
         const token = await user.generateAuthToken();
-        res.status(201).send({ user, token });
+        res.status(201).send({ user: newUser, token });
     } catch (error) {
         res.status(400).send(error);
     }
@@ -23,7 +24,7 @@ router
     .route('/users/:id')
     .put(auth, async (req, res) => {
         try {
-            const user = await User.findById(req.params.id);
+            const user = await User.findById(req.params.id).select('-password');
             user.email = req.body.email;
             user.name = req.body.name;
             user.age = req.body.age;
