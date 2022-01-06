@@ -14,17 +14,17 @@
     "license": "ISC",
     "homepage": "https://buildie.fi",
     "dependencies": {
-        "bcryptjs": "^2.4.3",
-        "dotenv": "^8.2.0",
-        "express": "^4.17.1",
-        "jsonwebtoken": "^8.5.1",
-        "mongoose": "^5.8.3",
-        "multer": "^1.4.2",
-        "sharp": "^0.24.0",
-        "validator": "^12.1.0"
+        "bcryptjs": "2.4.3",
+        "dotenv": "8.2.0",
+        "express": "4.17.1",
+        "jsonwebtoken": "8.5.1",
+        "mongoose": "5.8.3",
+        "multer": "1.4.2",
+        "sharp": "0.24.0",
+        "validator": "12.1.0"
     },
     "devDependencies": {
-        "husky": "^7.0.4",
+        "husky": "7.0.4",
         "prettier": "2.5.1"
     },
     "prettier": {
