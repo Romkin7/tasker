@@ -1,0 +1,21 @@
+@import '../../sass/variables';
+@import '../../sass/colors';
+
+.wrapper {
+    .input {
+        border: none;
+        -webkit-appearance: none;
+        -webkit-box-shadow: 0 0 0 2px $black;
+        box-shadow: 0 0 0 2px $black;
+        &:hover,
+        &:active,
+        &:focus {
+            -webkit-appearance: none;
+            -webkit-box-shadow: 0 0 0 2px $midnightBlue;
+            box-shadow: 0 0 0 3px $midnightBlue;
+        }
+    }
+    .errorText {
+        color: $dimray;
+    }
+}

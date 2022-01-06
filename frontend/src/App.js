@@ -1,17 +1,25 @@
-import './App.css';
+import './sass/main.scss';
+import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import LoginPage from './pages/LoginPage';
+import ProfilePage from './pages/ProfilePage';
 
 function App() {
-  return (
-    <div>
-      <Header />
-      <main>
-
-      </main>
-      <Footer />
-    </div>
-  );
+    return (
+        <div>
+            <Router>
+                <Header />
+                <main>
+                    <Routes>
+                        <Route exact path="/" element={<ProfilePage />} />
+                        <Route exact path="/login" element={<LoginPage />} />
+                    </Routes>
+                </main>
+                <Footer />
+            </Router>
+        </div>
+    );
 }
 
 export default App;
