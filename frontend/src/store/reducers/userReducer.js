@@ -1,7 +1,7 @@
 import { ADD_USER } from '../actions/userActions';
 
 const DEFAULT_STATE = {
-    user: null,
+    user: { age: 0, name: '', email: '', createdAt: '', updatedAt: '' },
 };
 
 const userReducer = (state = DEFAULT_STATE, action) => {

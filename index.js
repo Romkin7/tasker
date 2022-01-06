@@ -1,15 +1,15 @@
 const express = require('express');
 require('dotenv').config();
-require('./db/mongoose');
+require('./src/db/mongoose');
 
 const cors = require('cors'); //used to handle cross origin http requests
 
 /** NodeJs own internal packages */
 const path = require('path');
 /** Routes */
-const userRouter = require('./routers/user');
-const taskRouter = require('./routers/task');
-const authRouter = require('./routers/auth');
+const userRouter = require('./src/routers/user');
+const taskRouter = require('./src/routers/task');
+const authRouter = require('./src/routers/auth');
 
 const app = express();
 
@@ -28,13 +28,11 @@ app.use(userRouter);
 app.use(taskRouter);
 app.use(authRouter);
 
-//Serve react app in production to the browser
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname + '/frontend/build')));
-    app.get('*', (req, res) => {
-        res.sendFile('index.html');
-    });
-}
+app.use(express.static(path.join(__dirname, 'frontend/build')));
+
+app.get('*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'frontend/build', 'index.html'));
+});
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
