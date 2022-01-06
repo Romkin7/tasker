@@ -23,7 +23,7 @@ router
     .route('/users/:id')
     .put(auth, async (req, res) => {
         try {
-            const user = await User.findById(req.params.id);
+            const user = await User.findById(req.params.id).select('-password');
             user.email = req.body.email;
             user.name = req.body.name;
             user.age = req.body.age;

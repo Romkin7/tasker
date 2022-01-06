@@ -101,7 +101,7 @@ userSchema.statics.findByCredentials = async (email, password) => {
         throw new Error('Unable to login');
     }
 
-    return user;
+    return await User.findOne({ email: user.email }).select('-password');
 };
 
 // Hash the plain text password before saving
