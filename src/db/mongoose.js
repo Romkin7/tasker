@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 
 mongoose
-  .connect(process.env.DB_CONNECTION, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true,
-  })
-  .catch((error) => {
-    console.error(error);
-  });
+    .connect(process.env.DB_CONNECTION, {
+        useNewUrlParser: true,
+        useCreateIndex: true,
+        useFindAndModify: false,
+        useUnifiedTopology: true,
+    })
+    .catch((error) => {
+        console.error(error);
+    });
