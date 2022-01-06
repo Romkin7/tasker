@@ -1,0 +1,10 @@
+{
+    "age": 43,
+    "_id": "61d6b2c20f4df0c11ab1f9dd",
+    "name": "John Doe",
+    "email": "john.doe@test.com",
+    "password": "$2a$08$IpXt/uNil4fxz5uaDFqlOei1vovLI3UxyvGkUzEOqLTnL5YBmGFRC",
+    "createdAt": "2022-01-06T09:13:38.394Z",
+    "updatedAt": "2022-01-06T09:19:45.158Z",
+    "__v": 2
+}
