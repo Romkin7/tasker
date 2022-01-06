@@ -10,7 +10,7 @@ export const loginUser = (loginData) => {
                 type: ADD_USER,
                 user,
             });
-            window.localStorage.setItem("token", user.token);
+            window.localStorage.setItem('token', user.token);
         }
     };
 };
