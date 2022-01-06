@@ -19,19 +19,36 @@ router.get('/users/me', auth, async (req, res) => {
     res.send(req.user);
 });
 
-router.delete('/users/:id', auth, async (req, res) => {
-    try {
-        const user = await User.findByIdAndDelete(req.params.id);
-        if (user) {
-            return res
-                .status(200)
-                .json({ message: `Succesfully deleted ${user.name}!` });
-        } else {
-            return res.status(404).json({ message: 'User not found!' });
+router
+    .route('/users/:id')
+    .put(auth, async (req, res) => {
+        try {
+            const user = await User.findById(req.params.id);
+            user.email = req.body.email;
+            user.name = req.body.name;
+            user.age = req.body.age;
+            const updatedUser = await user.save();
+            return res.status(200).json({
+                message: `${updatedUser.name} information was successfully updated!`,
+                user: updatedUser,
+            });
+        } catch (error) {
+            return res.status(400).json({ message: error.message });
         }
-    } catch (error) {
-        return res.status(500).json({ message: error.message });
-    }
-});
+    })
+    .delete(auth, async (req, res) => {
+        try {
+            const user = await User.findByIdAndDelete(req.params.id);
+            if (user) {
+                return res
+                    .status(200)
+                    .json({ message: `Succesfully deleted ${user.name}!` });
+            } else {
+                return res.status(404).json({ message: 'User not found!' });
+            }
+        } catch (error) {
+            return res.status(500).json({ message: error.message });
+        }
+    });
 
 module.exports = router;
