@@ -1,0 +1,39 @@
+Request url
+
+http://localhost:3000/tasks?createdAt:1&page=2&perPage=2
+
+
+{
+    "tasks": [
+        {
+            "completed": false,
+            "_id": "61d6d1c7d2432df865c67a85",
+            "description": "Walk the dog",
+            "owner": "61d6be34a329fadcf9427853",
+            "createdAt": "2022-01-06T11:25:59.757Z",
+            "updatedAt": "2022-01-06T11:25:59.757Z",
+            "__v": 0
+        },
+        {
+            "completed": false,
+            "_id": "61d6d1bdd2432df865c67a84",
+            "description": "Buy milk",
+            "owner": "61d6be34a329fadcf9427853",
+            "createdAt": "2022-01-06T11:25:49.569Z",
+            "updatedAt": "2022-01-06T11:25:49.569Z",
+            "__v": 0
+        }
+    ],
+    "pagination": {
+        "currentPage": 2,
+        "perPage": 2,
+        "totalCount": 4,
+        "totalPages": 2,
+        "first": 1,
+        "last": 2,
+        "visiblePages": [
+            1,
+            2
+        ]
+    }
+}
