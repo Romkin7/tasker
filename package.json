@@ -1,0 +1,34 @@
+{
+  "name": "tasker",
+  "version": "1.0.0",
+  "description": "Add tasks to authenticated user",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "author": "sandstro + liukas",
+  "license": "ISC",
+  "homepage": "https://buildie.fi",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.8.3",
+    "multer": "^1.4.2",
+    "sharp": "^0.24.0",
+    "validator": "^12.1.0"
+  },
+  "devDependencies": {
+    "prettier": "2.5.1"
+  },
+  "prettier": {
+    "tabWidth": 4,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "arrowParens": "always",
+    "proseWrap": "always"
+  }
+}
