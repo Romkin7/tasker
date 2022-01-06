@@ -1,12 +1,18 @@
 {
     "root": true,
-    "plugins": [
-        "prettier"
-    ],
+    "plugins": ["prettier"],
     "rules": {
         "prettier/prettier": "error"
     },
-    "ignorePatterns": [
-        "node_modules"
-    ]
+    "ignorePatterns": ["node_modules"],
+    "parserOptions": {
+        "ecmaVersion": 2019,
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true
+        }
+    },
+
+    "env": {
+        "es6": true
+    }
 }
