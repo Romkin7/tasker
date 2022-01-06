@@ -8,8 +8,9 @@ router.post('/users', async (req, res) => {
 
     try {
         await user.save();
+        const newUser = await User.findById(user._id).select('-password');
         const token = await user.generateAuthToken();
-        res.status(201).send({ user, token });
+        res.status(201).send({ user: newUser, token });
     } catch (error) {
         res.status(400).send(error);
     }
