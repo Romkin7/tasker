@@ -9,7 +9,7 @@
         "start:frontend": "npm start --prefix frontend",
         "start:src": "nodemon src/index.js",
         "dev": "concurrently \"npm run start:frontend\" \"npm run start:src\"",
-        "lint": "npm run prettier:test && npm run lint:src && npm lint:frontend",
+        "lint": "npm run prettier:test && npm run lint:src && npm run lint:frontend",
         "lint:frontend": "eslint frontend/**/*.js --ext .js",
         "lint:src": "eslint src/**/*.js --ext .js",
         "prettier:test": "prettier --check \"**/**/*.js\"",
@@ -20,7 +20,7 @@
     "homepage": "https://buildie.fi",
     "dependencies": {
         "bcryptjs": "2.4.3",
-        "cors": "^2.8.5",
+        "cors": "2.8.5",
         "dotenv": "8.2.0",
         "express": "4.17.1",
         "jsonwebtoken": "8.5.1",
